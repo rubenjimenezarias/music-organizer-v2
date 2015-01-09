@@ -98,16 +98,16 @@ public class MusicOrganizer
      */
     public void listMatching(String searchString)
     {
-        int contador = 0;
+        boolean contador = true;
         for (String filename : files)
         {
             if (filename.contains(searchString)) 
             {
                System.out.println(filename);
-               contador = contador + 1;
+               contador = false;
             }   
         }
-        if (contador == 0)
+        if (contador)
         {
             System.out.println("Ningun archivo contiene este nombre"); 
         }
