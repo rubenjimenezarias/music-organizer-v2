@@ -113,5 +113,25 @@ public class MusicOrganizer
         }
         
     }
+    /**
+     * Reproduce archivos de un artista x segundos.
+     */
+    public void playArtist(String artista)
+    {
+        boolean contador = true;
+        for (String filename : files)
+        {
+            if (filename.contains(artista)) 
+            {
+               player.playSample(filename);
+               contador = false;
+            }   
+        }
+        if (contador)
+        {
+            System.out.println("Ningun archivo contiene este nombre"); 
+        }
+        
+    }
     
 }
