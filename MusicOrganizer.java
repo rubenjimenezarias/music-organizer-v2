@@ -82,4 +82,28 @@ public class MusicOrganizer
     {
         player.stop();
     }
+    /**
+     * Listamos todos los archivos de la lista
+     */
+    public void listAllFiles()
+    {
+        int position = 1;
+        for (String filename : files) {
+            System.out.println(position + ". " + filename);
+            position = position + 1;
+        }
+    }
+    /**
+     * Lista los archivos que contengan una cadena de caracteres.
+     */
+    public void listMatching(String searchString)
+    {
+        for (String filename : files)
+        {
+            if (filename.contains(searchString)) 
+            {
+               System.out.println(filename); 
+            }
+        }
+    }
 }
