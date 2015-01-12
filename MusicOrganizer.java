@@ -133,5 +133,30 @@ public class MusicOrganizer
         }
         
     }
-    
+    /**
+     * Busca el primer archivo con una cadena determinada y devuelve el indice. 
+     * Si no lo encuentra devuelve -1
+     */
+    public int findFirst(String busqueda)
+    {
+        int index = 0;
+        boolean found = false;
+        int cantidad = files.size();
+        
+        while (!found && index < cantidad){
+            String filename = files.get(index);
+            if (filename.contains(busqueda)){
+                found = true;
+            }
+            else {
+                index++;
+            }
+        }
+        if (!found){
+            return -1;
+        }
+        else {
+            return index;
+        }
+    }
 }
